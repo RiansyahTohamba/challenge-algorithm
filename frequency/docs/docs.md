@@ -1,4 +1,11 @@
-berapa banyak masalah frekuensi yang bisa ditemukan?
+frekuensi adalah soal yang sering dihadapi
+`freq[id] = val`
+frekuensi memiliki pola key-value
+dimana key adalah bilangan yang dicari frekuensi nya
+value adalah frekuensi kemunculan dari bilang tersebut
+
+
+# berapa banyak masalah frekuensi yang bisa ditemukan?
 1. mencari nilai dalam set dengan frekuensi tertinggi
 a. jika terdapat 2 nilai dengan frekuensi sama besar, cari nilai terkecil
 
