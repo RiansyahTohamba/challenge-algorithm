@@ -1,6 +1,6 @@
 package main
 
-// mencari frekuensi untuk nilai maksimum
+// mencari frekuensi untuk nilai maksimum yang ada pada set
 
 // tidak perlu mencatat frekuensi semua bilangan
 // cukup berfokus kepada nilai maksimum pada array
