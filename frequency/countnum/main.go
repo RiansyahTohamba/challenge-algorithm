@@ -2,11 +2,9 @@ package main
 
 import "fmt"
 
-type frequencies map[int32]int32
-
 // arr to hashmap
-func count(arr []int32) frequencies {
-	freq := make(frequencies)
+func count(arr []int32) map[int32]int32 {
+	freq := make(map[int32]int32)
 	for _, el := range arr {
 		freq[el]++
 	}
