@@ -8,7 +8,7 @@ func migratoryBirds(arr []int32) int32 {
 	// index pada array counts adalah birdId
 	// value nya adalah total kemunculan birdId pada set
 	for _, birdId := range arr {
-		counts[birdId] += 1
+		counts[birdId]++
 	}
 	fmt.Println(counts)
 	// mencari maksimum frequency
