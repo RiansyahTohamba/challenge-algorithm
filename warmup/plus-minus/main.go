@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func plusMinus(arr []int32) {
 	// Write your code here
@@ -30,6 +33,7 @@ func plusMinus(arr []int32) {
 }
 
 func main() {
-	arr := []int32{0, -1, 2, 3, -4, 4}
-	plusMinus(arr)
+	// arr := []int32{0, -1, 2, 3, -4, 4}
+	// plusMinus(arr)
+	fmt.Println(math.Floor(1 / 3))
 }
