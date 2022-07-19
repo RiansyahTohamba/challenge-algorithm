@@ -1,10 +1,18 @@
 package main
 
-// mencari frekuensi untuk nilai maksimum yang ada pada set
+import "fmt"
+
+func main() {
+	arr := []int{2, 3, 4, 2, 4, 2, 3}
+	max := getFreqOfMaxEl(arr)
+	fmt.Println(max)
+}
+
+// mencari frekuensi untuk element dengan nilai tertinggi pada set
 
 // tidak perlu mencatat frekuensi semua bilangan
 // cukup berfokus kepada nilai maksimum pada array
-func getMax(arr []int) int {
+func getFreqOfMaxEl(arr []int) int {
 	// terdapat 2 variable
 	// variable untuk menampung nilai maksimum (sementara)
 	var max int

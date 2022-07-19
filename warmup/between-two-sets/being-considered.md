@@ -1,7 +1,9 @@
 https://ell.stackexchange.com/questions/47948/one-of-the-upgrades-that-is-are-being-considered
 
 
-When the "that" refers to "one", the singular form "is" agrees with its subject.  When the "that" refers to "upgrades", the plural form "are" agrees with its subject.
+When the "that" refers to "one", the singular form "is" agrees with its subject.  
+
+When the "that" refers to "upgrades", the plural form "are" agrees with its subject.
 
 If it remains your intention that the clause "that is being considered" modify the pronoun "one", you have chosen the correct form of the verb.
 
