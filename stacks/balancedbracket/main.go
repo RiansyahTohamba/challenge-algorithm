@@ -38,11 +38,11 @@ func isBalanced(str string) bool {
 }
 
 // LIFO: yang paling akhir yg dicek pasangannya
-func isNotPair(stack []rune, db map[rune]rune, key rune) bool {
+func isNotPair(stack []rune, db map[rune]rune, rightPair rune) bool {
 	top := len(stack) - 1
-	valFromStack := stack[top]
-	keyFromDB := db[valFromStack]
-	return keyFromDB != key
+	leftBracket := stack[top]
+	rightPairFromDB := db[leftBracket]
+	return rightPairFromDB != rightPair
 }
 func seedDB() {
 	db = map[rune]rune{
