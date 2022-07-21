@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+type occurence int
+
 type PersonAges struct {
 	// member
 	id string
@@ -10,26 +12,33 @@ type PersonAges struct {
 }
 
 func main() {
-	ages := []PersonAges{{id: "person:12", age: 21},
-		{id: "person:88", age: 28}, {id: "person:32", age: 21},
-		{id: "person:77", age: 22}, {id: "person:21", age: 28}}
-
-	fmt.Println(GetAgeDistr(ages))
-	fmt.Println(FilterByAge(ages, 21))
+	expected := map[string]int{
+		"person:112":  23,
+		"person:1412": 23,
+		"persosd":     23,
+	}
+	for k, v := range expected {
+		fmt.Println(k)
+		fmt.Println(v)
+	}
 }
 
-func GetAgeDistr(ages []PersonAges) map[int]int {
-	ageDistr := map[int]int{}
-	for _, ag := range ages {
-		ageDistr[ag.age]++
+// map[int]occurence = map[age]int
+// expected value: map[21:2 22:1 28:2]
+func GetAgeDistr(ages []PersonAges) map[int]occurence {
+	agesDistr := make(map[int]occurence)
+	for _, p := range ages {
+		agesDistr[p.age]++
 	}
-	return ageDistr
+	return agesDistr
 }
 
-func FilterByAge(ages []PersonAges, age int) []PersonAges {
-	peopleByAge := make(map[int][]PersonAges)
-	for _, person := range ages {
-		peopleByAge[person.age] = append(peopleByAge[person.age], person)
+func FindByAge(ages []PersonAges, age int) []PersonAges {
+	prsAges := make([]PersonAges, 0)
+	for _, p := range ages {
+		if p.age == age {
+			prsAges = append(prsAges, p)
+		}
 	}
-	return peopleByAge[age]
+	return prsAges
 }
