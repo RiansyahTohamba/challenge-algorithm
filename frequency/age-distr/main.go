@@ -25,7 +25,7 @@ func main() {
 
 // map[int]occurence = map[age]int
 // expected value: map[21:2 22:1 28:2]
-func GetAgeDistr(ages []PersonAges) map[int]occurence {
+func GroupByAge(ages []PersonAges) map[int]occurence {
 	agesDistr := make(map[int]occurence)
 	for _, p := range ages {
 		agesDistr[p.age]++

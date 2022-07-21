@@ -22,7 +22,7 @@ func seedAges() {
 // expected value: map[21:2 22:1 28:2]
 func Test_GetAgeDistr(t *testing.T) {
 	seedAges()
-	gots := GetAgeDistr(ages)
+	gots := GroupByAge(ages)
 	expected := map[int]occurence{
 		24: 1,
 		23: 3,
