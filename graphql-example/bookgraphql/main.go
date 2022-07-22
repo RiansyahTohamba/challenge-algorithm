@@ -5,10 +5,16 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
+// github.com/graphql-go/graphql = 8.7k
+// github.com/99design/gqlgen =
 func main() {
 	router := gin.Default()
 	router.POST("/api/graphql", func(ctx *gin.Context) {
-		res, err := handleAll()
+		// req :=
+		// ctx.ShouldBind
+		// didapatkan dari request body
+		query := ""
+		res, err := handleAll(query)
 		if err != nil {
 			ctx.JSON(400, gin.H{
 				"error": err,

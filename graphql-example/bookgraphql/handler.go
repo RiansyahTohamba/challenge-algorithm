@@ -7,7 +7,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-func handleAll() (*graphql.Result, error) {
+func handleAll(query string) (*graphql.Result, error) {
 	fields := getFields()
 
 	rootQuery := graphql.ObjectConfig{Name: "RootQuery", Fields: fields}
@@ -18,14 +18,14 @@ func handleAll() (*graphql.Result, error) {
 		log.Fatalf("failed create schema: %v", err)
 	}
 
-	query := `
-		{
-			listBook{
-				title
-				author
-			}
-		}
-	`
+	// query := `
+	// 	{
+	// 		listBook{
+	// 			title
+	// 			author
+	// 		}
+	// 	}
+	// `
 	params := graphql.Params{Schema: schema, RequestString: query}
 
 	res := graphql.Do(params)
