@@ -1,12 +1,12 @@
 package main
 
 import (
+	"challenge-algorithm/graphql-example/http-post/schema"
 	"encoding/json"
 	"fmt"
 	"net/http"
 
 	"github.com/graphql-go/graphql"
-	"github.com/graphql-go/graphql/examples/todo/schema"
 )
 
 type postData struct {
@@ -17,6 +17,7 @@ type postData struct {
 
 // contoh reques di postman
 func main() {
+	// seedData book
 	http.HandleFunc("/api/graphql", func(w http.ResponseWriter, r *http.Request) {
 		var post postData
 
@@ -24,10 +25,10 @@ func main() {
 			w.WriteHeader(400)
 			return
 		}
-
+		// bagaimana kalau buat all schema?
 		result := graphql.Do(graphql.Params{
 			Context:        r.Context(),
-			Schema:         schema.TodoSchema,
+			Schema:         schema.MainSchema,
 			RequestString:  post.Query,
 			VariableValues: post.Variables,
 			OperationName:  post.Operation,

@@ -25,3 +25,9 @@ todo2 := schema.Todo{ID: "b", Text: "This is the most important", Done: false}
 ```json
 { "query": "mutation { updateTodo(id:\"a\", done: true) { id text done } }" }
 ```
+
+
+# ==== 
+```json
+{ "query": "{ bookList { title } }" }
+```
