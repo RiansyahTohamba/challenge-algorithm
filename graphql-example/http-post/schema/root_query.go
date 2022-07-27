@@ -20,7 +20,8 @@ var rootQuery = graphql.NewObject(graphql.ObjectConfig{
 			},
 		},
 		"journalList": &graphql.Field{
-			Type: graphql.NewList(journalType),
+			Type:        graphql.NewList(journalType),
+			Description: "List of Journal",
 			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 				return JournalList, nil
 			},
