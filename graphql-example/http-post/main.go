@@ -18,6 +18,8 @@ type postData struct {
 // contoh reques di postman
 func main() {
 	// seedData book
+	schema.SeedBook()
+	schema.SeedJournal()
 	http.HandleFunc("/api/graphql", func(w http.ResponseWriter, r *http.Request) {
 		var post postData
 

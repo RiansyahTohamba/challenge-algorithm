@@ -16,3 +16,10 @@ var journalType = graphql.NewObject(graphql.ObjectConfig{
 		},
 	},
 })
+
+func SeedJournal() {
+	JournalList = []Journal{
+		{""},
+		{""},
+	}
+}

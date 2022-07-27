@@ -16,3 +16,21 @@ var bookType = graphql.NewObject(graphql.ObjectConfig{
 		},
 	},
 })
+
+func SeedBook() {
+	BookList = []Book{
+		{"naruto 20"},
+		{"naruto 40"},
+		{"naruto 22"},
+		{"naruto 50"},
+	}
+}
+
+// seed data book
+// pakai in memory data dulu
+
+// Create Book?
+// Retrieve Book?
+// Update Book
+
+// semuanya diset di root query, apakah bisa digeser?
