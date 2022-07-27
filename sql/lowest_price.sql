@@ -1,0 +1,1 @@
+select name from foods where price = (select min(price) from foods)
