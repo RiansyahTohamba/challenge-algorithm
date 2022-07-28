@@ -3,8 +3,9 @@ package main
 import "fmt"
 
 /*
-size.channel = len(function)
-number of function
+	size.channel = len(function)
+	number of function
+	penghitungan summary dilakukan secara paralel
 */
 func fillChannel(functions ...func() int) chan int {
 	funcCh := make(chan int, len(functions))
@@ -15,7 +16,7 @@ func fillChannel(functions ...func() int) chan int {
 	return funcCh
 }
 
-func exampleFunction(counter int) int {
+func summary(counter int) int {
 	sum := 0
 	for i := 0; i < counter; i++ {
 		sum += 1
@@ -24,8 +25,8 @@ func exampleFunction(counter int) int {
 }
 
 func main() {
-	expensiveFunction := func() int { return exampleFunction(200) }
-	cheapFunction := func() int { return exampleFunction(100) }
+	expensiveFunction := func() int { return summary(200) }
+	cheapFunction := func() int { return summary(100) }
 
 	ch := fillChannel(expensiveFunction, cheapFunction)
 
