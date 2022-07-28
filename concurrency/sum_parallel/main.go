@@ -6,7 +6,6 @@ import "fmt"
 size.channel = len(function)
 number of function
 */
-// SELECT name from products WHERE price = (SELECT MIN(price) FROM products)
 func fillChannel(functions ...func() int) chan int {
 	funcCh := make(chan int, len(functions))
 	for _, fu := range functions {
