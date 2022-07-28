@@ -6,7 +6,8 @@ import (
 
 func Test_diff_val_for_rank_1and2(t *testing.T) {
 	list := []int{5, 9, 7, 11, 10, 20, 30}
-	got := findMaxSum(list)
+	r1, r2 := getFirstSecondRank(list)
+	got := r1 + r2
 	ranking_1 := 30
 	ranking_2 := 20
 	expected := ranking_1 + ranking_2
@@ -17,12 +18,14 @@ func Test_diff_val_for_rank_1and2(t *testing.T) {
 
 func Test_same_rank1_2(t *testing.T) {
 	list := []int{5, 9, 7, 11, 10, 20, 20}
-	got := findMaxSum(list)
 
-	// jadi harus distinct then baru dijumlahkan
+	r1, r2 := getFirstSecondRank(list)
+	got := r1 + r2
+
 	ranking_1 := 20
 	ranking_2 := 11
 	expected := ranking_1 + ranking_2
+
 	if got != expected {
 		t.Errorf("got %v, expected %v", got, expected)
 	}

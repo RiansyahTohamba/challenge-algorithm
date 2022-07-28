@@ -2,40 +2,48 @@ package main
 
 import "fmt"
 
-func findMaxSum(numbers []int) int {
-	sorted := selectionSort(numbers)
-	size := len(numbers)
-
-	return sorted[size-1] + sorted[size-2]
-}
-
-func selectionSort(n []int) []int {
-	i := 1
+func selectionSort(numbers []int) []int {
+	iterator := 1
 	// remove duplicate here
-	//
-	for i < len(n)-1 {
-		var j = i + 1
-		var minIndex = i
+	// selama iterator dibawah len(numbers)
 
-		if j < len(n) {
-			if n[j] < n[minIndex] {
-				minIndex = j
+	// kenapa harus iterator dibawah len(numbers)-1?
+	stop := len(numbers) - 1
+
+	for iterator < stop {
+		var iterator2 = iterator + 1
+		var minIndex = iterator
+
+		// jika iterator2 lebih kecil dari len(numbers)
+		if iterator2 < len(numbers) {
+			// compare min index with
+			if numbers[iterator2] < numbers[minIndex] {
+				minIndex = iterator2
 			}
-			j++
+			iterator2++
+		}
+		// disini nilai iterator2 terus bertambah
+		// iterator 2 berfungsi sebagai apa?
+		// iterator 2 mencari pasangan yang akan dicompare
+
+		// jika minIndex tidak
+		// temukan dulu min_index nya baru apa?
+		if minIndex != iterator {
+			// swap
+			var temp = numbers[iterator]
+			numbers[iterator] = numbers[minIndex]
+			numbers[minIndex] = temp
+			// temp diambil dari number iterator
+			// iterator = 1
 		}
 
-		if minIndex != i {
-			var temp = n[i]
-			n[i] = n[minIndex]
-			n[minIndex] = temp
-		}
-
-		i++
+		iterator++
 	}
-	return n
+	return numbers
 }
 
 func main() {
-	list := []int{5, 9, 7, 11, 10, 20, 30}
-	fmt.Println(findMaxSum(list))
+	list := []int{20, 9, 7, 2, 10}
+
+	fmt.Println(selectionSort(list))
 }
